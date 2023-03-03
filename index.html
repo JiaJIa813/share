@@ -1,0 +1,46 @@
+<html prefix="og: http://ogp.me/ns#">
+<head>
+    <title>gamecenter</title>
+    <meta property="fb:app_id" content="2002914596579604"> 
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="小小仙尊" />
+    <meta property="og:description"        content="一起来玩游戏" />
+    <!-- <meta property="og:image"              content="链接可以看到的图片，图片对应的地址（例如：www.xx.com/img.png）"/> -->
+    <meta property="og:image"              content="www.xx.com/img.png"/>
+ <!-- 安卓平台对应配置 -->
+    <meta property="al:android:url" content="myapp://test"> <!-- 对应配置的scheme+ “://”+host -->
+    <meta property="al:android:package" content="com.adaric.xxxz.idle">
+    <meta property="al:android:app_name" content="小小仙尊">
+ <!-- IOS平台对应配置 -->
+    <meta property="al:ios:url" content="myapp://test"/> <!-- 对应配置的scheme+ “://”+host -->
+    <meta property="al:ios:app_store_id" content="com.adaric.xxxz.idle"/>
+    <meta property="al:ios:app_name" content="小小仙尊"/>
+ 
+    <script>
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+		//获取分享携带的id参数!!
+        var refer = getQueryVariable("id");
+		//  [你的应用包名]替换成对应的内容
+        if(isAndroid){
+            location.href='https://play.google.com/store/apps/details?id=com.adaric.xxxz.idle&referrer='+refer
+        } else {
+		//[你的应用的apple store id]替换成对应的内容
+            location.href='https://itunes.apple.com/cn/app/amo-rush/idcom.adaric.xxxz.idle?l=zh&ls=1&mt=8&referrer='+refer
+        }
+ 
+        function getQueryVariable(variable)
+        {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] == variable){return pair[1];}
+            }
+            return(false);
+        }
+    </script>
+ 
+</head>
+</html>
